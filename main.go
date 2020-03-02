@@ -3,8 +3,6 @@ package main
 import (
     "os"
 
-    "sampleapp/routers"
-
     "github.com/OkanoShogo0903/osakana/controller"
 
     "github.com/gin-contrib/cors"
