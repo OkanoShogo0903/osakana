@@ -1,18 +1,21 @@
 package main
 
 import (
+    /*
     "os"
 
-    "github.com/OkanoShogo0903/osakana/controller"
+    //"github.com/OkanoShogo0903/osakana/controller"
     "github.com/OkanoShogo0903/osakana/routers"
 
     "github.com/gin-contrib/cors"
 
     "github.com/gin-gonic/gin"
+    */
 )
 
 func main() {
-    aquarium_model := model.New()
+    /*
+    //aquarium_model := model.New()
 
     router := gin.Default()
     router.Use(cors.Default())
@@ -22,12 +25,12 @@ func main() {
 
     user := router.Group("/user")
     {
-        user.POST("/signup", routers.UserSignUp)
+        //user.POST("/signup", routers.UserSignUp)
         user.POST("/login", routers.UserLogIn)
     }
 
     router.GET("/", routers.Home)
-    router.GET("/aquarium", controller.aquarium(aquarium_model))
+    //router.GET("/aquarium", controller.aquarium(aquarium_model))
     router.GET("/login", routers.LogIn)
     router.GET("/signup", routers.SignUp)
     router.NoRoute(routers.NoRoute)
@@ -39,4 +42,5 @@ func main() {
         port = os.Args[1]
     }
     router.Run(":" + port)
+    */
 }
