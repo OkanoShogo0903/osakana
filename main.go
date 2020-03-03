@@ -4,6 +4,7 @@ import (
     "os"
 
     "github.com/OkanoShogo0903/osakana/controller"
+    "github.com/OkanoShogo0903/osakana/routers"
 
     "github.com/gin-contrib/cors"
 
