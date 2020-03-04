@@ -6,7 +6,9 @@
     "npm": "4.2.0"
   },
   "scripts": {
-    "postinstall": "npm --prefix ./vue-app install ./vue-app && cd ./vue-app && npm run build"
+
+    "start": "npm --prefix ./vue-app install ./vue-app && cd ./vue-app && node server.js"
+
   },
   "dependencies": {
     "express": "^4.17.1"
