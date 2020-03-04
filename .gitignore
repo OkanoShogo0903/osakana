@@ -3,7 +3,7 @@ node_modules
 #/dist
 
 # Executable file
-main
+#main
 
 # local env files
 .env.local
