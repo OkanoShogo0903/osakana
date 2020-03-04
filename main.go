@@ -1,15 +1,13 @@
 package main
 
 import (
-    /*
     "os"
+    "net/http"
 
     //"github.com/OkanoShogo0903/osakana/controller"
-    "github.com/OkanoShogo0903/osakana/routers"
+    //"github.com/OkanoShogo0903/osakana/routers"
 
-    */
     "github.com/gin-contrib/cors"
-    "net/http"
     "github.com/gin-gonic/gin"
 )
 
@@ -29,8 +27,6 @@ func main() {
     })
     */
 
-    router.Run(":8080")
-
     /*
     //aquarium_model := model.New()
 
@@ -46,13 +42,12 @@ func main() {
     router.GET("/login", routers.LogIn)
     router.GET("/signup", routers.SignUp)
     router.NoRoute(routers.NoRoute)
-
-    port := ""
-    if len(os.Args) < 2 {
-        port = os.Getenv("PORT")
-    } else {
-        port = os.Args[1]
-    }
-    router.Run(":" + port)
     */
+
+    port, is_port := os.LookupEnv("PORT")
+    if is_port == false {
+        port = "8080"
+    }
+
+    router.Run(":" + port)
 }
