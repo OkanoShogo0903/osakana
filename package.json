@@ -7,7 +7,7 @@
   },
   "scripts": {
 
-    "start": "npm --prefix ./vue-app install ./vue-app && cd ./vue-app && node server.js"
+    "start": "npm --prefix ./vue-app install ./vue-app && cd ./vue-app"
 
   },
   "dependencies": {
