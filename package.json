@@ -2,11 +2,12 @@
   "name": "osakana",
   "version": "0.0.1",
   "engines": {
-    "node": "7.10.0",
-    "npm": "4.2.0"
+    "node": "12.16.1",
+    "npm": "6.14.2"
   },
   "scripts": {
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies. && npm --prefix ./vue-app install ./vue-app"
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies. && npm --prefix ./vue-app install ./vue-app",
+    "build":"cd ./vue-app && npm run build"
 
   },
   "dependencies": {
