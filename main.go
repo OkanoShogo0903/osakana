@@ -7,21 +7,33 @@ import (
     //"github.com/OkanoShogo0903/osakana/controller"
     "github.com/OkanoShogo0903/osakana/routers"
 
-    "github.com/gin-contrib/cors"
-
-    "github.com/gin-gonic/gin"
     */
+    "github.com/gin-contrib/cors"
+    "net/http"
+    "github.com/gin-gonic/gin"
 )
 
 func main() {
+    router := gin.Default()
+    //router.LoadHTMLGlob("./vue-app/dist/*.html")
+    //router.Static("/vue-app/dist", "./assets")
+    //router.Static("/assets", "./assets")
+
+    router.Use(cors.Default())
+
+    router.StaticFS("/", http.Dir("./vue-app/dist"))
+
+    /*
+    router.GET("/", func(ctx *gin.Context){
+        ctx.HTML(http.StatusOK, "index.html", gin.H{})
+    })
+    */
+
+    router.Run(":8080")
+
     /*
     //aquarium_model := model.New()
 
-    router := gin.Default()
-    router.Use(cors.Default())
-
-    router.LoadHTMLGlob("views/*.html")
-    router.Static("/assets", "./assets")
 
     user := router.Group("/user")
     {
