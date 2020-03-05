@@ -2,10 +2,13 @@
 node_modules
 #/dist
 
+# DB pass
+dbconf.yml
+
 # Executable file
 #main
 
-# local env files
+# Local env files
 .env.local
 .env.*.local
 
