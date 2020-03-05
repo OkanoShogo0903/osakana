@@ -3,7 +3,7 @@ node_modules
 #/dist
 
 # DB pass
-dbconf.yml
+db/dbconf.yml
 
 # Executable file
 #main
