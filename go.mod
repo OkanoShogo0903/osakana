@@ -5,6 +5,7 @@ go 1.14
 require (
 	bitbucket.org/liamstask/goose v0.0.0-20150115234039-8488cc47d90c // indirect
 	github.com/gin-contrib/cors v1.3.0
+	github.com/gin-contrib/static v0.0.0-20191128031702-f81c604d8ac2
 	github.com/gin-gonic/gin v1.5.0
 	github.com/go-redis/redis/v7 v7.2.0 // indirect
 	github.com/go-sql-driver/mysql v1.5.0

@@ -2,14 +2,15 @@ package server
 
 import (
     "log"
-    "net/http"
+    //"net/http"
 
     "github.com/OkanoShogo0903/osakana/controller"
     db2 "github.com/OkanoShogo0903/osakana/db"
 
     "github.com/jmoiron/sqlx"
-    "github.com/gin-contrib/cors"
     "github.com/gin-gonic/gin"
+    "github.com/gin-contrib/cors"
+    "github.com/gin-contrib/static"
 )
 
 type Server struct {
@@ -38,31 +39,19 @@ func (s *Server) Run(port string) {
 
 func (s *Server) Route() *gin.Engine {
     router := gin.Default()
-
     router.Use(cors.Default())
-
-    router.StaticFS("/", http.Dir("./vue-app/dist"))
+    //router.StaticFS("/", http.Dir("./vue-app/dist"))
+	router.Use(static.Serve("/", static.LocalFile("./vue-app/dist", false))) // Home
 
     aquarium_controller := controller.NewAquarium(s.db)
-
     user := router.Group("/user")
     {
-        /*
-        user.POST("/signup", func(c *gin.Context){
-            c.HTML(http.StatusOK, "index.html", gin.H{})
-        })
-        */
-        user.POST("/aquarium", aquarium_controller.GetUserData)
+        user.GET("/check", aquarium_controller.GetUserExistence)
+        user.GET("/aquarium", aquarium_controller.GetUserData)
         user.PUT("/update", aquarium_controller.UpdateUserData)
         user.POST("/signup", aquarium_controller.Signup)
-        //user.POST("/login", aquarium_controller.Login)
-
     }
 
-    //router.GET("/", routers.Home)
-    //router.GET("/aquarium", controller.aquarium(aquarium_model))
-    //router.GET("/login", routers.LogIn)
-    //router.GET("/signup", routers.SignUp)
     //router.NoRoute(routers.NoRoute)
     return router
 }
