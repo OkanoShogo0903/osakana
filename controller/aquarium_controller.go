@@ -1,9 +1,7 @@
 package controller
 
 import (
-    //"fmt"
     "log"
-    //"strconv"
     "net/http"
 
     "github.com/OkanoShogo0903/osakana/model"
