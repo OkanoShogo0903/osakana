@@ -16,6 +16,9 @@ local:
 run:
 	go run cmd/api/main.go
 
+build:
+	go build cmd/api/main.go
+
 get:
 	curl -v -X POST \
 	  http://localhost:8080/user/aquarium \
