@@ -41,7 +41,7 @@ func (s *Server) Route() *gin.Engine {
     router := gin.Default()
     router.Use(cors.Default())
     //router.StaticFS("/", http.Dir("./vue-app/dist"))
-	router.Use(static.Serve("/", static.LocalFile("./vue-app/dist", false))) // Home
+	router.Use(static.Serve("/", static.LocalFile("./frontend/dist", false))) // Home
 
     aquarium_controller := controller.NewAquarium(s.db)
     user := router.Group("/user")
